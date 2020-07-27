@@ -1,0 +1,53 @@
+①MySQL
+sudo apt-get install -y mysql-server libmysqlclient-dev
+(パスワード登録)
+(パスワード確認)
+mysql -u root -p
+#root user login
+
+CREATE DATABASE (db name) DFEAULT CHARRACTER SET (文字コード)
+#make db and string code
+
+CREATE USER (user name) IDENTIFIED BY (password)
+#make user and password
+
+GRANT (object 権限) ON (db name) TO (user name)
+#ユーザに指定されたDBに対し、オブジェクト権限を付与する
+
+pip install mysqlclient
+#pythonとMysqlを接続するためのクライアントライブラリ
+
+→以降、MySQLで登録したDB、ユーザ（パスワード）を基にpythonを用いてDBにデータを保存する
+
+②MongoDB(NoSQL)
+$ cat /etc/lsb-release
+#ubuntu version
+
+$ sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 0C49F3730359A14518585931BC711F9BA15703C6
+#MongoDBの公開GPGキーを登録
+
+$ echo "deb [ arch=amd64,arm64 ] http://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.4 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-3.4.list
+#ubuntu version 16.04にMongoDBを登録
+
+$ sudo apt-get update
+#パッケージデータベースを更新
+
+$ sudo apt-get install mongodb-org
+#MongoDBパッケージをインストール
+
+#MongoDBの開始
+$ sudo service mongod start
+
+#MongoDBの停止
+$ sudo service mongod stop
+
+#MongoDBの再起動
+$ sudo service mongod restart
+
+MongoDBに接続
+$ mongo
+
+参考：https://www.trifields.jp/how-to-install-mongodb-on-ubuntu-2751
+
+$pip install pymongo
+#pythonとMongoDBを接続するためのpythonバインディング（結びつける:binding）

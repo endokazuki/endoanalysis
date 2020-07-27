@@ -1,0 +1,24 @@
+・コピー&ペースト
+コピー：ctrl + shift + c
+ペースト：ctrl + shift + v
+
+・管理者コマンド
+sudo 
+ソフトウェアのインストール方法
+sudo apt-get install -y [software]
+*下記のケースでインストールが阻害された時
+
+E: ロック /var/lib/dpkg/lock-frontend が取得できませんでした - open (11: リソースが一時的に利用できません)
+↓
+sudo rm /var/lib/dpkg/lock-frontend
+で対応
+
+ソフトウェアのアップグレード方法
+sudo apt-get update
+
+*下記のケースでインストールが阻害された時
+E: ディレクトリ /var/lib/apt/lists/ をロックできません
+↓
+$ sudo rm /var/lib/apt/lists/lock
+で対応
+
